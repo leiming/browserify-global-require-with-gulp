@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+<body>
+<script src="./output.js"></script>
+<script>
+  // browserify -t hbsfy -r ./index.js:module > output.js
+  var bar = require('module')
+  document.body.insertAdjacentHTML('afterbegin', bar.hello("world"))
+</script>
+<script src="./output-gulp.js"></script>
+<script>
+  // gulp
+  var foo = require('module-gulp')
+  document.body.insertAdjacentHTML('afterend', foo.hello("world-gulp"))
+</script>
+</body>
+</html>
